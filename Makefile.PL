@@ -7,19 +7,19 @@ use 5.014;
 use ExtUtils::MakeMaker;
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Original program path locations extension for exact",
+  "ABSTRACT" => "Functions and methods with parameter lists for exact",
   "AUTHOR" => "Gryphon Shafer <gryphon\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
   },
-  "DISTNAME" => "exact-me",
+  "DISTNAME" => "exact-fun",
   "LICENSE" => "artistic_2",
   "MIN_PERL_VERSION" => "5.014",
-  "NAME" => "exact::me",
+  "NAME" => "exact::fun",
   "PREREQ_PM" => {
-    "FindBin" => 0,
-    "exact" => "1.14",
-    "strict" => 0
+    "Class::Method::Modifiers" => 0,
+    "Function::Parameters" => 0,
+    "exact" => "1.14"
   },
   "TEST_REQUIRES" => {
     "File::Spec" => 0,
@@ -27,9 +27,10 @@ my %WriteMakefileArgs = (
     "IPC::Open3" => 0,
     "Test2::V0" => 0,
     "Test::More" => 0,
+    "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "1.04",
+  "VERSION" => "0.001",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -37,8 +38,9 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
+  "Class::Method::Modifiers" => 0,
   "File::Spec" => 0,
-  "FindBin" => 0,
+  "Function::Parameters" => 0,
   "IO::Handle" => 0,
   "IPC::Open3" => 0,
   "Test2::V0" => 0,
