@@ -4,7 +4,7 @@ exact::fun - Functions and methods with parameter lists for exact
 
 # VERSION
 
-version 1.00
+version 1.01
 
 [![test](https://github.com/gryphonshafer/exact-fun/workflows/test/badge.svg)](https://github.com/gryphonshafer/exact-fun/actions?query=workflow%3Atest)
 [![codecov](https://codecov.io/gh/gryphonshafer/exact-fun/graph/badge.svg)](https://codecov.io/gh/gryphonshafer/exact-fun)

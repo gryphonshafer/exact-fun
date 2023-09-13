@@ -3,24 +3,16 @@ package exact::fun;
 
 use 5.014;
 use exact;
-use Function::Parameters     ();
+use Import::Into;
 use Class::Method::Modifiers ();
+use Function::Parameters     ();
 
 # VERSION
 
 sub import {
-    my ( $self, $caller, $input ) = @_;
-
-    Function::Parameters->import( ( $input and $input =~ /^mod/i ) ? ( qw( :std :modifiers ) ) : ':std' );
-
-    if ( $input and $input =~ /^cmm/i ) {
-        $caller //= caller();
-        eval qq{
-            package $caller {
-                use Class::Method::Modifiers;
-            };
-        };
-    }
+    my ( $self, $params, $caller ) = @_;
+    Function::Parameters->import( ( $params and $params =~ /^mod/i ) ? ( qw( :std :modifiers ) ) : ':std' );
+    Class::Method::Modifiers->import::into( $caller // caller() ) if ( $params and $params =~ /^cmm/i );
 }
 
 1;
